@@ -11,6 +11,11 @@
     text-align: center;
     position: relative;
     overflow: hidden;
+    color: #374151; /* gray-700 for better contrast */
+}
+
+body.dark .step-indicator {
+    color: #d1d5db; /* gray-300 for dark mode */
 }
 
 .step-indicator::after {
@@ -27,21 +32,23 @@
 }
 
 .step-indicator.step-active {
-    background: linear-gradient(135deg, #5D5CDE, #7C7CE8);
+    background: linear-gradient(135deg, #4F46E5, #7C3AED);
     transform: scale(1.05);
-    box-shadow: 0 10px 25px -5px rgba(93, 92, 222, 0.4), 0 8px 10px -6px rgba(93, 92, 222, 0.2);
+    box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.4), 0 8px 10px -6px rgba(79, 70, 229, 0.2);
+    color: white !important;
 }
 
 .step-indicator.step-active::after {
-    background-color: #5D5CDE;
+    background-color: #4F46E5;
     width: 8px;
     height: 8px;
     bottom: -10px;
 }
 
 .step-indicator:hover:not(.step-active) {
-    background-color: rgba(93, 92, 222, 0.1);
+    background-color: rgba(79, 70, 229, 0.1);
     transform: translateY(-2px);
+    color: #1f2937; /* gray-800 for better contrast on hover */
 }
 
 /* Fade-in animation with enhanced transition */
@@ -115,8 +122,8 @@ textarea {
 
 textarea:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(93, 92, 222, 0.2);
-    border-color: #5D5CDE;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+    border-color: #4F46E5;
 }
 
 /* Add a subtle animation for the content area */
@@ -128,7 +135,7 @@ textarea:focus {
 /* Enhanced focus styles for accessibility */
 textarea:focus-visible,
 button:focus-visible {
-    outline: 2px solid #5D5CDE;
+    outline: 2px solid #4F46E5;
     outline-offset: 2px;
 }
 
@@ -220,14 +227,14 @@ body.dark .step-indicator:hover:not(.step-active) {
 }
 
 body.dark textarea:focus {
-    box-shadow: 0 0 0 3px rgba(93, 92, 222, 0.3);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.3);
 }
 
 /* Summary view enhancements */
 #summary {
-    background: linear-gradient(135deg, rgba(93, 92, 222, 0.05), rgba(93, 92, 222, 0.08));
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.05), rgba(79, 70, 229, 0.08));
     border-radius: 16px;
-    border: 1px solid rgba(93, 92, 222, 0.1);
+    border: 1px solid rgba(79, 70, 229, 0.1);
 }
 
 /* Enhanced summary content styling */
@@ -243,4 +250,9 @@ body.dark textarea:focus {
 /* Animation for progress bar */
 #progressBar {
     transition: width 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+/* Update progress bar colors to match new palette */
+#progressBar {
+    background: linear-gradient(90deg, #4F46E5, #7C3AED) !important;
 }

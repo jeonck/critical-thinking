@@ -211,7 +211,7 @@ class CriticalThinkingApp {
                 section.fields.forEach(field => {
                     if (this.responses[field]?.trim()) {
                         summaryHTML += `
-                            <div class="bg-white dark:bg-gray-600 p-3 rounded border-l-4 border-primary">
+                            <div class="bg-white dark:bg-gray-600 p-3 rounded border-l-4 border-indigo-500">
                                 ${this.responses[field].replace(/\n/g, '<br>')}
                             </div>
                         `;
@@ -266,7 +266,7 @@ class CriticalThinkingApp {
                 <p class="text-gray-700 dark:text-gray-300 mb-4">${message}</p>
                 <div class="flex justify-end space-x-3">
                     <button class="px-4 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded" onclick="this.closest('.fixed').remove()">취소</button>
-                    <button class="px-4 py-2 bg-red-500 text-white hover:bg-red-600 rounded" onclick="this.closest('.fixed').remove(); onConfirm()">확인</button>
+                    <button class="px-4 py-2 bg-rose-600 text-white hover:bg-rose-700 rounded" onclick="this.closest('.fixed').remove(); onConfirm()">확인</button>
                 </div>
             </div>
         `;

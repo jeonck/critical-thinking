@@ -10,8 +10,11 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#5D5CDE',
-                        'primary-dark': '#4A49B8'
+                        primary: '#4F46E5',      // indigo-600 (more sophisticated)
+                        'primary-dark': '#4338CA', // indigo-700
+                        'primary-light': '#818CF8', // indigo-400 for lighter accents
+                        accent: '#0F766E',         // teal-700 for secondary actions
+                        'accent-light': '#14B8A6'  // teal-500 for lighter accents
                     }
                 }
             }
@@ -21,7 +24,7 @@
 </head>
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
     <!-- Header -->
-    <div class="bg-gradient-to-r from-primary to-primary-dark text-white p-4 sm:p-5 md:p-6">
+    <div class="bg-gradient-to-r from-primary to-primary-light text-white p-4 sm:p-5 md:p-6">
         <div class="max-w-6xl mx-auto">
             <h1 class="text-xl sm:text-2xl md:text-3xl font-bold mb-1">Critical Thinking Framework</h1>
             <p class="text-blue-100 text-sm sm:text-base">체계적 사고를 통한 문제 해결</p>
@@ -33,41 +36,41 @@
         <div class="mb-6 sm:mb-7 md:mb-8">
             <div class="flex justify-between items-center mb-3 sm:mb-4">
                 <span class="text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-400">진행률</span>
-                <span class="text-xs sm:text-sm font-medium text-primary" id="progressText">0/7 단계</span>
+                <span class="text-xs sm:text-sm font-medium text-indigo-600 dark:text-indigo-400" id="progressText">0/7 단계</span>
             </div>
             <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 sm:h-2.5">
-                <div class="bg-gradient-to-r from-primary to-primary-dark h-2 sm:h-2.5 rounded-full transition-all duration-300 ease-out" 
+                <div class="bg-gradient-to-r from-primary to-primary-light h-2 sm:h-2.5 rounded-full transition-all duration-300 ease-out" 
                      id="progressBar" style="width: 0%"></div>
             </div>
         </div>
 
         <!-- Step Indicators - Improved mobile layout -->
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-1.5 sm:gap-2 mb-6 sm:mb-8">
-            <div class="step-indicator text-center p-2 sm:p-3 bg-gray-100 dark:bg-gray-800 rounded-lg flex flex-col items-center justify-center" data-step="1">
+            <div class="step-indicator text-center p-2 sm:p-3 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-lg flex flex-col items-center justify-center" data-step="1">
                 <div class="text-xl sm:text-2xl mb-1">🎯</div>
                 <div class="text-[0.6rem] sm:text-xs font-medium leading-tight">문제정의</div>
             </div>
-            <div class="step-indicator text-center p-2 sm:p-3 bg-gray-100 dark:bg-gray-800 rounded-lg flex flex-col items-center justify-center" data-step="2">
+            <div class="step-indicator text-center p-2 sm:p-3 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-lg flex flex-col items-center justify-center" data-step="2">
                 <div class="text-xl sm:text-2xl mb-1">📊</div>
                 <div class="text-[0.6rem] sm:text-xs font-medium leading-tight">정보수집</div>
             </div>
-            <div class="step-indicator text-center p-2 sm:p-3 bg-gray-100 dark:bg-gray-800 rounded-lg flex flex-col items-center justify-center" data-step="3">
+            <div class="step-indicator text-center p-2 sm:p-3 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-lg flex flex-col items-center justify-center" data-step="3">
                 <div class="text-xl sm:text-2xl mb-1">🤔</div>
                 <div class="text-[0.6rem] sm:text-xs font-medium leading-tight">가정인식</div>
             </div>
-            <div class="step-indicator text-center p-2 sm:p-3 bg-gray-100 dark:bg-gray-800 rounded-lg flex flex-col items-center justify-center" data-step="4">
+            <div class="step-indicator text-center p-2 sm:p-3 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-lg flex flex-col items-center justify-center" data-step="4">
                 <div class="text-xl sm:text-2xl mb-1">👥</div>
                 <div class="text-[0.6rem] sm:text-xs font-medium leading-tight">다양한관점</div>
             </div>
-            <div class="step-indicator text-center p-2 sm:p-3 bg-gray-100 dark:bg-gray-800 rounded-lg flex flex-col items-center justify-center" data-step="5">
+            <div class="step-indicator text-center p-2 sm:p-3 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-lg flex flex-col items-center justify-center" data-step="5">
                 <div class="text-xl sm:text-2xl mb-1">⚖️</div>
                 <div class="text-[0.6rem] sm:text-xs font-medium leading-tight">논증평가</div>
             </div>
-            <div class="step-indicator text-center p-2 sm:p-3 bg-gray-100 dark:bg-gray-800 rounded-lg flex flex-col items-center justify-center" data-step="6">
+            <div class="step-indicator text-center p-2 sm:p-3 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-lg flex flex-col items-center justify-center" data-step="6">
                 <div class="text-xl sm:text-2xl mb-1">💡</div>
                 <div class="text-[0.6rem] sm:text-xs font-medium leading-tight">결론도출</div>
             </div>
-            <div class="step-indicator text-center p-2 sm:p-3 bg-gray-100 dark:bg-gray-800 rounded-lg flex flex-col items-center justify-center" data-step="7">
+            <div class="step-indicator text-center p-2 sm:p-3 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-lg flex flex-col items-center justify-center" data-step="7">
                 <div class="text-xl sm:text-2xl mb-1">🚀</div>
                 <div class="text-[0.6rem] sm:text-xs font-medium leading-tight">행동계획</div>
             </div>
@@ -77,7 +80,7 @@
         <div id="stepContainer" class="bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-5 md:p-6 mb-6">
             <!-- Step 1: Problem Definition -->
             <div id="step1" class="step-content fade-in">
-                <h2 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-primary">1단계: 문제 정의</h2>
+                <h2 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-indigo-600 dark:text-indigo-400">1단계: 문제 정의</h2>
                 <p class="text-gray-600 dark:text-gray-400 mb-4 sm:mb-6 text-sm sm:text-base">해결하고자 하는 문제를 명확하게 정의해보세요.</p>
                 
                 <div class="space-y-4">
@@ -99,7 +102,7 @@
 
             <!-- Step 2: Information Gathering -->
             <div id="step2" class="step-content hidden">
-                <h2 class="text-2xl font-bold mb-4 text-primary">2단계: 정보 수집</h2>
+                <h2 class="text-2xl font-bold mb-4 text-indigo-600 dark:text-indigo-400">2단계: 정보 수집</h2>
                 <p class="text-gray-600 dark:text-gray-400 mb-6">문제와 관련된 정보를 체계적으로 수집해보세요.</p>
                 
                 <div class="space-y-4">
@@ -121,7 +124,7 @@
 
             <!-- Step 3: Recognizing Assumptions -->
             <div id="step3" class="step-content hidden">
-                <h2 class="text-2xl font-bold mb-4 text-primary">3단계: 가정 인식</h2>
+                <h2 class="text-2xl font-bold mb-4 text-indigo-600 dark:text-indigo-400">3단계: 가정 인식</h2>
                 <p class="text-gray-600 dark:text-gray-400 mb-6">무의식적으로 받아들이고 있는 가정들을 인식해보세요.</p>
                 
                 <div class="space-y-4">
@@ -143,7 +146,7 @@
 
             <!-- Step 4: Multiple Perspectives -->
             <div id="step4" class="step-content hidden">
-                <h2 class="text-2xl font-bold mb-4 text-primary">4단계: 다양한 관점 고려</h2>
+                <h2 class="text-2xl font-bold mb-4 text-indigo-600 dark:text-indigo-400">4단계: 다양한 관점 고려</h2>
                 <p class="text-gray-600 dark:text-gray-400 mb-6">문제를 다양한 각도에서 바라보세요.</p>
                 
                 <div class="space-y-4">
@@ -165,7 +168,7 @@
 
             <!-- Step 5: Evaluating Arguments -->
             <div id="step5" class="step-content hidden">
-                <h2 class="text-2xl font-bold mb-4 text-primary">5단계: 논증 평가</h2>
+                <h2 class="text-2xl font-bold mb-4 text-indigo-600 dark:text-indigo-400">5단계: 논증 평가</h2>
                 <p class="text-gray-600 dark:text-gray-400 mb-6">각 논증의 논리성과 증거를 평가해보세요.</p>
                 
                 <div class="space-y-4">
@@ -187,7 +190,7 @@
 
             <!-- Step 6: Drawing Conclusions -->
             <div id="step6" class="step-content hidden">
-                <h2 class="text-2xl font-bold mb-4 text-primary">6단계: 결론 도출</h2>
+                <h2 class="text-2xl font-bold mb-4 text-indigo-600 dark:text-indigo-400">6단계: 결론 도출</h2>
                 <p class="text-gray-600 dark:text-gray-400 mb-6">지금까지의 분석을 바탕으로 결론을 도출해보세요.</p>
                 
                 <div class="space-y-4">
@@ -209,7 +212,7 @@
 
             <!-- Step 7: Action Plan -->
             <div id="step7" class="step-content hidden">
-                <h2 class="text-2xl font-bold mb-4 text-primary">7단계: 행동 계획</h2>
+                <h2 class="text-2xl font-bold mb-4 text-indigo-600 dark:text-indigo-400">7단계: 행동 계획</h2>
                 <p class="text-gray-600 dark:text-gray-400 mb-6">결론을 바탕으로 구체적인 행동 계획을 세워보세요.</p>
                 
                 <div class="space-y-4">
@@ -231,7 +234,7 @@
 
             <!-- Summary View -->
             <div id="summary" class="step-content hidden">
-                <h2 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-primary">🎉 분석 완료!</h2>
+                <h2 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-indigo-600 dark:text-indigo-400">🎉 분석 완료!</h2>
                 <p class="text-gray-600 dark:text-gray-400 mb-4 sm:mb-6 text-sm sm:text-base">Critical Thinking 프로세스를 통한 문제 분석이 완료되었습니다.</p>
                 
                 <div id="summaryContent" class="space-y-4">
@@ -261,7 +264,7 @@
             
             <div class="flex flex-col-reverse sm:flex-row gap-3 w-full sm:w-auto">
                 <button id="resetBtn" 
-                        class="w-full sm:w-auto px-5 sm:px-6 py-3 bg-red-500 text-white rounded-xl sm:rounded-lg hover:bg-red-600 transition-colors">
+                        class="w-full sm:w-auto px-5 sm:px-6 py-3 bg-rose-600 text-white rounded-xl sm:rounded-lg hover:bg-rose-700 transition-colors">
                     🔄 다시 시작
                 </button>
                 

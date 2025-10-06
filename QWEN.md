@@ -61,7 +61,7 @@ The application has been refactored and enhanced to separate concerns into multi
 
 - **HTML Structure** (`index.html`): Contains the 7-step form with text areas for user input, optimized with responsive classes
 - **CSS Styling** (`style.css`): Custom CSS for animations, modern UI elements, and responsive design
-- **Tailwind CSS**: Provides styling with a custom color palette (primary: #5D5CDE) via CDN
+- **Tailwind CSS**: Provides styling with a refined color palette (primary: #4F46E5, indigo-600) via CDN
 - **JavaScript Functionality** (`script.js`): `CriticalThinkingApp` class manages state, navigation, UI updates, and touch interactions
 - **Responsive Design**: Mobile-first approach with optimized layouts for all screen sizes
 
