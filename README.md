@@ -45,6 +45,12 @@ critical-thinking/
 
 ## 🚀 Getting Started
 
+### Online Access
+
+You can access the application directly in your browser without installing anything:
+
+[https://jeonck.github.io/critical-thinking/](https://jeonck.github.io/critical-thinking/)
+
 ### Prerequisites
 
 - A modern web browser
