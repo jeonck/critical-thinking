@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Critical Thinking Framework</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        'primary-dark': '#4A49B8'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-primary to-primary-dark text-white p-4 sm:p-5 md:p-6">
+        <div class="max-w-6xl mx-auto">
+            <h1 class="text-xl sm:text-2xl md:text-3xl font-bold mb-1">Critical Thinking Framework</h1>
+            <p class="text-blue-100 text-sm sm:text-base">체계적 사고를 통한 문제 해결</p>
+        </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-5 md:px-6 py-4 sm:py-5 md:py-6">
+        <!-- Progress Bar -->
+        <div class="mb-6 sm:mb-7 md:mb-8">
+            <div class="flex justify-between items-center mb-3 sm:mb-4">
+                <span class="text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-400">진행률</span>
+                <span class="text-xs sm:text-sm font-medium text-primary" id="progressText">0/7 단계</span>
+            </div>
+            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 sm:h-2.5">
+                <div class="bg-gradient-to-r from-primary to-primary-dark h-2 sm:h-2.5 rounded-full transition-all duration-300 ease-out" 
+                     id="progressBar" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <!-- Step Indicators - Improved mobile layout -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-1.5 sm:gap-2 mb-6 sm:mb-8">
+            <div class="step-indicator text-center p-2 sm:p-3 bg-gray-100 dark:bg-gray-800 rounded-lg flex flex-col items-center justify-center" data-step="1">
+                <div class="text-xl sm:text-2xl mb-1">🎯</div>
+                <div class="text-[0.6rem] sm:text-xs font-medium leading-tight">문제정의</div>
+            </div>
+            <div class="step-indicator text-center p-2 sm:p-3 bg-gray-100 dark:bg-gray-800 rounded-lg flex flex-col items-center justify-center" data-step="2">
+                <div class="text-xl sm:text-2xl mb-1">📊</div>
+                <div class="text-[0.6rem] sm:text-xs font-medium leading-tight">정보수집</div>
+            </div>
+            <div class="step-indicator text-center p-2 sm:p-3 bg-gray-100 dark:bg-gray-800 rounded-lg flex flex-col items-center justify-center" data-step="3">
+                <div class="text-xl sm:text-2xl mb-1">🤔</div>
+                <div class="text-[0.6rem] sm:text-xs font-medium leading-tight">가정인식</div>
+            </div>
+            <div class="step-indicator text-center p-2 sm:p-3 bg-gray-100 dark:bg-gray-800 rounded-lg flex flex-col items-center justify-center" data-step="4">
+                <div class="text-xl sm:text-2xl mb-1">👥</div>
+                <div class="text-[0.6rem] sm:text-xs font-medium leading-tight">다양한관점</div>
+            </div>
+            <div class="step-indicator text-center p-2 sm:p-3 bg-gray-100 dark:bg-gray-800 rounded-lg flex flex-col items-center justify-center" data-step="5">
+                <div class="text-xl sm:text-2xl mb-1">⚖️</div>
+                <div class="text-[0.6rem] sm:text-xs font-medium leading-tight">논증평가</div>
+            </div>
+            <div class="step-indicator text-center p-2 sm:p-3 bg-gray-100 dark:bg-gray-800 rounded-lg flex flex-col items-center justify-center" data-step="6">
+                <div class="text-xl sm:text-2xl mb-1">💡</div>
+                <div class="text-[0.6rem] sm:text-xs font-medium leading-tight">결론도출</div>
+            </div>
+            <div class="step-indicator text-center p-2 sm:p-3 bg-gray-100 dark:bg-gray-800 rounded-lg flex flex-col items-center justify-center" data-step="7">
+                <div class="text-xl sm:text-2xl mb-1">🚀</div>
+                <div class="text-[0.6rem] sm:text-xs font-medium leading-tight">행동계획</div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div id="stepContainer" class="bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-5 md:p-6 mb-6">
+            <!-- Step 1: Problem Definition -->
+            <div id="step1" class="step-content fade-in">
+                <h2 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-primary">1단계: 문제 정의</h2>
+                <p class="text-gray-600 dark:text-gray-400 mb-4 sm:mb-6 text-sm sm:text-base">해결하고자 하는 문제를 명확하게 정의해보세요.</p>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">해결하고자 하는 문제는 무엇인가요?</label>
+                        <textarea id="problem" rows="3" 
+                                  class="w-full p-3 text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700 transition-all duration-200"
+                                  placeholder="구체적이고 명확하게 문제를 설명해주세요..."></textarea>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">이 문제가 왜 중요한가요?</label>
+                        <textarea id="importance" rows="2" 
+                                  class="w-full p-3 text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700 transition-all duration-200"
+                                  placeholder="문제 해결의 중요성을 설명해주세요..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Information Gathering -->
+            <div id="step2" class="step-content hidden">
+                <h2 class="text-2xl font-bold mb-4 text-primary">2단계: 정보 수집</h2>
+                <p class="text-gray-600 dark:text-gray-400 mb-6">문제와 관련된 정보를 체계적으로 수집해보세요.</p>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">현재 알고 있는 사실들은 무엇인가요?</label>
+                        <textarea id="knownFacts" rows="3" 
+                                  class="w-full p-3 text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700"
+                                  placeholder="확실하게 알고 있는 정보들을 나열해주세요..."></textarea>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">더 필요한 정보는 무엇인가요?</label>
+                        <textarea id="neededInfo" rows="3" 
+                                  class="w-full p-3 text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700"
+                                  placeholder="추가로 조사해야 할 정보들을 적어주세요..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Recognizing Assumptions -->
+            <div id="step3" class="step-content hidden">
+                <h2 class="text-2xl font-bold mb-4 text-primary">3단계: 가정 인식</h2>
+                <p class="text-gray-600 dark:text-gray-400 mb-6">무의식적으로 받아들이고 있는 가정들을 인식해보세요.</p>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">이 문제에 대해 당연하게 생각하고 있는 것들은 무엇인가요?</label>
+                        <textarea id="assumptions" rows="3" 
+                                  class="w-full p-3 text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700"
+                                  placeholder="의심해보지 않고 받아들이고 있는 전제들을 적어주세요..."></textarea>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">이러한 가정들이 정말 타당한가요?</label>
+                        <textarea id="assumptionValidity" rows="3" 
+                                  class="w-full p-3 text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700"
+                                  placeholder="각 가정들의 타당성을 검토해보세요..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4: Multiple Perspectives -->
+            <div id="step4" class="step-content hidden">
+                <h2 class="text-2xl font-bold mb-4 text-primary">4단계: 다양한 관점 고려</h2>
+                <p class="text-gray-600 dark:text-gray-400 mb-6">문제를 다양한 각도에서 바라보세요.</p>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">이해관계자들의 관점은 어떻게 다를까요?</label>
+                        <textarea id="stakeholderViews" rows="3" 
+                                  class="w-full p-3 text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700"
+                                  placeholder="관련된 사람들이나 그룹들의 시각을 고려해보세요..."></textarea>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">반대 의견은 무엇일까요?</label>
+                        <textarea id="counterArguments" rows="3" 
+                                  class="w-full p-3 text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700"
+                                  placeholder="내 생각과 반대되는 입장을 상상해보세요..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 5: Evaluating Arguments -->
+            <div id="step5" class="step-content hidden">
+                <h2 class="text-2xl font-bold mb-4 text-primary">5단계: 논증 평가</h2>
+                <p class="text-gray-600 dark:text-gray-400 mb-6">각 논증의 논리성과 증거를 평가해보세요.</p>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">가장 강력한 논증과 그 근거는 무엇인가요?</label>
+                        <textarea id="strongArguments" rows="3" 
+                                  class="w-full p-3 text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700"
+                                  placeholder="논리적이고 증거가 충분한 논증들을 평가해보세요..."></textarea>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">약한 논증이나 논리적 오류는 무엇인가요?</label>
+                        <textarea id="weakArguments" rows="3" 
+                                  class="w-full p-3 text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700"
+                                  placeholder="근거가 부족하거나 논리적 결함이 있는 부분들을 찾아보세요..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 6: Drawing Conclusions -->
+            <div id="step6" class="step-content hidden">
+                <h2 class="text-2xl font-bold mb-4 text-primary">6단계: 결론 도출</h2>
+                <p class="text-gray-600 dark:text-gray-400 mb-6">지금까지의 분석을 바탕으로 결론을 도출해보세요.</p>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">종합적으로 분석한 결과, 어떤 결론에 도달했나요?</label>
+                        <textarea id="conclusion" rows="4" 
+                                  class="w-full p-3 text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700"
+                                  placeholder="모든 분석을 종합하여 내린 결론을 적어주세요..."></textarea>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">이 결론의 한계나 불확실성은 무엇인가요?</label>
+                        <textarea id="limitations" rows="3" 
+                                  class="w-full p-3 text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700"
+                                  placeholder="결론의 제약사항이나 추가 고려사항을 적어주세요..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 7: Action Plan -->
+            <div id="step7" class="step-content hidden">
+                <h2 class="text-2xl font-bold mb-4 text-primary">7단계: 행동 계획</h2>
+                <p class="text-gray-600 dark:text-gray-400 mb-6">결론을 바탕으로 구체적인 행동 계획을 세워보세요.</p>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">구체적으로 어떤 행동을 취할 것인가요?</label>
+                        <textarea id="actionSteps" rows="4" 
+                                  class="w-full p-3 text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700"
+                                  placeholder="단계별 실행 계획을 구체적으로 적어주세요..."></textarea>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">성공을 어떻게 측정할 것인가요?</label>
+                        <textarea id="successMetrics" rows="2" 
+                                  class="w-full p-3 text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700"
+                                  placeholder="성과 지표나 평가 기준을 설정해주세요..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary View -->
+            <div id="summary" class="step-content hidden">
+                <h2 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-primary">🎉 분석 완료!</h2>
+                <p class="text-gray-600 dark:text-gray-400 mb-4 sm:mb-6 text-sm sm:text-base">Critical Thinking 프로세스를 통한 문제 분석이 완료되었습니다.</p>
+                
+                <div id="summaryContent" class="space-y-4">
+                    <!-- Summary will be generated here -->
+                </div>
+                
+                <div class="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                    <h3 class="font-semibold text-blue-800 dark:text-blue-200 mb-2">💡 다음 단계 제안</h3>
+                    <p class="text-blue-700 dark:text-blue-300 text-sm">분석 결과를 바탕으로 실제 행동에 옮겨보세요. 정기적으로 진행상황을 점검하고 필요시 계획을 수정하는 것도 중요합니다.</p>
+                </div>
+                
+                <div class="mt-6">
+                    <button id="backToStep7" class="w-full sm:w-auto px-5 sm:px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-xl sm:rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+                        ← 7단계로 돌아가기
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons - Improved mobile layout -->
+        <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <button id="prevBtn" 
+                    class="w-full sm:w-auto px-5 sm:px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-xl sm:rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    disabled>
+                ← 이전
+            </button>
+            
+            <div class="flex flex-col-reverse sm:flex-row gap-3 w-full sm:w-auto">
+                <button id="resetBtn" 
+                        class="w-full sm:w-auto px-5 sm:px-6 py-3 bg-red-500 text-white rounded-xl sm:rounded-lg hover:bg-red-600 transition-colors">
+                    🔄 다시 시작
+                </button>
+                
+                <button id="nextBtn" 
+                        class="w-full sm:w-auto px-5 sm:px-6 py-3 bg-primary text-white rounded-xl sm:rounded-lg hover:bg-primary-dark transition-colors">
+                    다음 →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
